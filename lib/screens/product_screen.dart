@@ -126,7 +126,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     /* return ListTile(
                         leading: Image.network(productList[index].p_image),
                       ); */
-                    return SizedBox(
+                     if(index < searchList.length){ return SizedBox(
                       height: MediaQuery.of(context).size.height * 0.2,
                       child: Card(
                         child: Row(
@@ -184,7 +184,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           ],
                         ),
                       ),
-                    );
+                    );}
                   }),
             )),
           ],
