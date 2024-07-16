@@ -17,7 +17,7 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     var cartProvider = Provider.of<CartNotifier>(context);
-    var prodProvider = Provider.of<ProductNotifier>(context); 
+    var prodProvider = Provider.of<ProductNotifier>(context);
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -48,11 +48,10 @@ class _ProductScreenState extends State<ProductScreen> {
           ],
         ),
         body: Column(
-          
           children: [
             Container(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Row(
                   children: [
@@ -77,7 +76,6 @@ class _ProductScreenState extends State<ProductScreen> {
                   ],
                 ),
                 Row(
-                  
                   children: [
                     const Icon(
                       Icons.filter_list_alt,
@@ -126,26 +124,41 @@ class _ProductScreenState extends State<ProductScreen> {
                     /* return ListTile(
                         leading: Image.network(productList[index].p_image),
                       ); */
-                     if(index < searchList.length){ return SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
-                      child: Card(
-                        child: Row(
-                          children: [
-                            Image.network(
-                              searchList[index].p_image,
-                              width: MediaQuery.of(context).size.width * 0.45,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      searchList[index].p_name,
+                    if (index < searchList.length) {
+                      return SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        child: Card(
+                          child: Row(
+                            children: [
+                              Image.network(
+                                searchList[index].p_image,
+                                width: MediaQuery.of(context).size.width * 0.45,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        searchList[index].p_name,
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.abhayaLibre(
+                                          textStyle: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Price: ₹${searchList[index].p_price}',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.abhayaLibre(
                                         textStyle: const TextStyle(
@@ -154,37 +167,34 @@ class _ProductScreenState extends State<ProductScreen> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Price: ₹${searchList[index].p_price}',
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.abhayaLibre(
-                                      textStyle: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                    const SizedBox(
+                                      height: 10,
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  ElevatedButton.icon(
-                                    onPressed: () {
-                                      cartProvider.addToCart(index);
-                                    },
-                                    icon: const Icon(Icons.add_shopping_cart),
-                                    label: const Text("Add to Cart"),
-                                  )
-                                ],
+                                    ElevatedButton.icon(
+                                      onPressed: () {
+                                        cartProvider.addToCart(index);
+                                      },
+                                      icon: const Icon(Icons.add_shopping_cart),
+                                      label: const Text("Add to Cart"),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );}
+                      );
+                    } else {
+                      return const SizedBox(
+                        height: 0,
+                        width: 0,
+                        child: Text(
+                          "Something went wrong...",
+                          style: TextStyle(
+                              fontSize: 40, fontWeight: FontWeight.w600),
+                        ),
+                      );
+                    }
                   }),
             )),
           ],
