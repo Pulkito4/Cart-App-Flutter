@@ -1,16 +1,14 @@
-# cart_app
+# Add to Cart App
 
-A new Flutter project.
+## Functionality/Features:
+- add items to cart
+- sort product listings based on price
+- filter products using a search bar
+- add or remove items from cart
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### To test on your own device:  
+- clone the repository
+- open the directory in terminal
+- run command ```flutter pub get``` to download all dependencies
+- You are ready to go!
