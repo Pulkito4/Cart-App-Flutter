@@ -1,14 +1,12 @@
+import 'package:cart_app/data/products.data.dart';
 import 'package:cart_app/models/cart.model.dart';
-import 'package:cart_app/providers/product_notifier.dart';
 import 'package:flutter/material.dart';
 
 class CartNotifier extends ChangeNotifier {
   List cartList = [];
-  final ProductNotifier productNotifier;
-  CartNotifier({required this.productNotifier});
 
   addToCart(index) {
-    var currItem = productNotifier.searchList[index];
+    var currItem = searchList[index];
     bool found = false;
 
     for (int i = 0; i < cartList.length; i++) {

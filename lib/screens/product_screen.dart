@@ -132,7 +132,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         child: Row(
                           children: [
                             Image.network(
-                              prodProvider.searchList[index].p_image,
+                              searchList[index].p_image,
                               width: MediaQuery.of(context).size.width * 0.45,
                             ),
                             const SizedBox(
@@ -145,7 +145,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                 children: [
                                   Flexible(
                                     child: Text(
-                                      prodProvider.searchList[index].p_name,
+                                      searchList[index].p_name,
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.abhayaLibre(
                                         textStyle: const TextStyle(
@@ -159,7 +159,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    'Price: ₹${prodProvider.searchList[index].p_price}',
+                                    'Price: ₹${searchList[index].p_price}',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.abhayaLibre(
                                       textStyle: const TextStyle(

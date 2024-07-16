@@ -42,3 +42,5 @@ List productList = [
       "https://m.media-amazon.com/images/I/71ocQY+G2XL._AC_UY327_FMwebp_QL65_.jpg",
       12499),
 ];
+
+List searchList = [...productList];

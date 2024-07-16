@@ -2,7 +2,6 @@ import 'package:cart_app/data/products.data.dart';
 import 'package:flutter/material.dart';
 
 class ProductNotifier extends ChangeNotifier {
-  List searchList = [...productList];
   
 
   String _dropdownValue = 'default';
@@ -28,9 +27,8 @@ class ProductNotifier extends ChangeNotifier {
   }
 
   sortDefault() {
-    searchList.sort(
-      (a, b) => a.p_id.compareTo(b.p_id),
-    );
+    searchList = [...productList];
+  
     notifyListeners();
   }
 
